@@ -8,33 +8,21 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script type="text/javascript" src="random.js"></script>
+    <script type="text/javascript" src="insult_generator.js"></script>
   </head>
-  
-  
-  
-  <script>
-	function get_meaning(name){
-	  alert(name);
-	}
-  
-	function get_text(){
-	  text = document.getElementsByName("inputbox")[0].value;
-	  get_meaning(text);
-	}
-  </script>
+
   
   <body>
     <section class="page-header">
-      <h1 class="project-name">Descobre o significado do teu nome</h1>
-      <br/>
-      <form name="myform" method="GET">
-		<input style="color:black;"name="inputbox" type="text"></input>
+	<h1 class="project-name">Descobre o significado do teu nome</h1>
+	<br/>
+		<form name="myform" action="javascript:write_meaning()">
+			<input style="color:black;"name="inputbox" type="text"></input>
+			<a class="btn" href="javascript:write_meaning()">Submit</a>
+		</form>
 		
-<!--
-		@FIXME: convinha o botão fazer o mesmo que carregar em enter
--->
-		<input id="clickMe" class="btn" type="button" value="clickme" onclick="get_text()" />
-      </form>
+      
       <h2 class="project-tagline"></h2>
 <!--
       <a href="https://github.com/duarte-pompeu/name_meaning" class="btn">View on GitHub</a>
