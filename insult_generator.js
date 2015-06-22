@@ -55,7 +55,7 @@ function get_meaning(name)
 		insults_res.push(splt[r]);
 	}
 	
-	reset_seed(seed);
+	reset_seed();
 	return insults_res;
 }
 

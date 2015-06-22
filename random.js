@@ -12,7 +12,7 @@ var SHIFT_FACTOR = 100;
 function seed_once(n)
 {
     if(m_z == "NOT_INITIALIZED"){
-		reset_seed(n);
+		set_seed(n);
 	}
 }
 
@@ -35,9 +35,13 @@ function random_int(n1, n2)
 	return result;
 }
 
-function reset_seed(n){
+function set_seed(n){
 	m_w = n;
 	m_z = 987654321;
+}
+
+function reset_seed(){
+	m_z = "NOT_INITIALIZED";
 }
 
 function get_index(char)
