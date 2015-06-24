@@ -7,6 +7,7 @@ var mask = 0xffffffff;
 var m_z = "NOT_INITIALIZED";
 
 var SHIFT_FACTOR = 100;
+var SALT = 123456;
 
 // Takes any integer
 function seed_once(n)
@@ -69,12 +70,13 @@ function serialize_name(name)
 		serial+= get_index(char);
 	}
 	
+	serial += SALT;
 	return serial;
 }
 
 function deserialize_name(serial){
 	name = "";
-	decomposed_serial = serial;
+	decomposed_serial = serial - SALT;
 	
 	while(decomposed_serial > 0){
 		ch_index = Math.round(decomposed_serial % SHIFT_FACTOR);
