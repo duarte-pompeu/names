@@ -12,7 +12,7 @@ var SALT = 123456;
 // Takes any integer
 function seed_once(n)
 {
-    if(m_z == "NOT_INITIALIZED"){
+	if(m_z == "NOT_INITIALIZED"){
 		set_seed(n);
 	}
 }
@@ -21,12 +21,13 @@ function seed_once(n)
 // just like Math.random().
 function random()
 {
-    m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
-    m_w = (18000 * (m_w & 65535) + (m_w >> 16)) & mask;
-    var result = ((m_z << 16) + m_w) & mask;
-    result /= 4294967296;
-    return result + 0.5;
+	m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
+	m_w = (18000 * (m_w & 65535) + (m_w >> 16)) & mask;
+	var result = ((m_z << 16) + m_w) & mask;
+	result /= 4294967296;
+	return result + 0.5;
 }
+
 
 function random_int(n1, n2)
 {
@@ -36,14 +37,17 @@ function random_int(n1, n2)
 	return result;
 }
 
+
 function set_seed(n){
 	m_w = n;
 	m_z = 987654321;
 }
 
+
 function reset_seed(){
 	m_z = "NOT_INITIALIZED";
 }
+
 
 function get_index(char)
 {
@@ -54,6 +58,7 @@ function get_index(char)
 	}
 }
 
+
 function get_char(i)
 {
 	return alphabet[i];
@@ -62,29 +67,30 @@ function get_char(i)
 function serialize_name(name)
 {
 	var serial = 0;
-	
+
 	for(var i = 0; i < name.length; i++){
 		char = name[i];
-		
+
 		serial*= SHIFT_FACTOR;
 		serial+= get_index(char);
 	}
-	
+
 	serial += SALT;
 	return serial;
 }
 
+
 function deserialize_name(serial){
 	name = "";
 	decomposed_serial = serial - SALT;
-	
+
 	while(decomposed_serial > 0){
 		ch_index = Math.round(decomposed_serial % SHIFT_FACTOR);
 		char = get_char(ch_index);
-		
+
 		name = char + name;
 		decomposed_serial = Math.round (decomposed_serial / SHIFT_FACTOR);
 	}
-	
+
 	return name;
 }
