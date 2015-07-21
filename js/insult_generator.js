@@ -4,6 +4,11 @@ var all_insults = "aldrabão,abécula,agarrado,analfabruto,atraso de vida,apanha
 function write_meaning()
 {
 	full_name = get_text().toLowerCase();
+	full_name = full_name.replace(/[áàãâ]+/g,'a');
+	full_name = full_name.replace(/[éèẽê]+/g,'e');
+	full_name = full_name.replace(/[íìĩî]+/g,'i');
+	full_name = full_name.replace(/[óòõô]+/g,'o');
+	full_name = full_name.replace(/[úùũû]+/g,'u');
 	names = full_name.split(" ");
 
 	var meaning_matrix = [];
