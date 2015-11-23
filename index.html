@@ -15,6 +15,18 @@
 
 	
 <body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+   <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<section class="page-header">
 		<h1 class="project-name">Descobre o significado do teu nome</h1>
 		<br/>
@@ -22,6 +34,8 @@
 			<input style="color:black;"name="inputbox" type="text"></input>
 			<a class="btn" href="javascript:write_meaning()">Submit</a>
 		</form>
+		
+		<div class="fb-share-button" data-href="http://duarte-pompeu.github.io/name_meaning/" data-layout="button"></div>
 			
 				
 		<h2 class="project-tagline"></h2>
