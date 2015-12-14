@@ -1,4 +1,8 @@
-
+/*
+ * io.js
+ * IO and string formatting.
+ */
+ 
 function pretty_print(meaning_matrix)
 {
 	serial_id = serialize_name(name);
@@ -26,6 +30,18 @@ function pretty_print(meaning_matrix)
 function capitalize(string) {
 	// taken from http://stackoverflow.com/a/1026087
 	return string[0].toUpperCase() + string.slice(1);
+}
+
+function remove_glyphs(string){
+	
+	string = string.replace(/[áàãâ]+/g,'a');
+	string = string.replace(/[éèẽê]+/g,'e');
+	string = string.replace(/[íìĩî]+/g,'i');
+	string = string.replace(/[óòõô]+/g,'o');
+	string = string.replace(/[úùũû]+/g,'u');
+	string = string.replace(/ç/, 'c')
+	
+	return string;
 }
 
 
