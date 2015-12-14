@@ -3,7 +3,7 @@
  * IO and string formatting.
  */
  
-function pretty_print(meaning_matrix)
+function pretty_print(meaning_matrix, name)
 {
 	serial_id = serialize_name(name);
 	deserial_name = deserialize_name(serial_id);
@@ -24,12 +24,24 @@ function pretty_print(meaning_matrix)
 
 	var div = document.getElementById('name_meaning');
 	div.innerHTML = "<p>" + out + "</p>";
+	document.title = "Significado do nome " + capitalize_words(name)
 }
 
 
 function capitalize(string) {
 	// taken from http://stackoverflow.com/a/1026087
 	return string[0].toUpperCase() + string.slice(1);
+}
+
+function capitalize_words(str)
+{
+    var pieces = str.split(" ");
+    for ( var i = 0; i < pieces.length; i++ )
+    {
+        var j = pieces[i].charAt(0).toUpperCase();
+        pieces[i] = j + pieces[i].substr(1).toLowerCase();
+    }
+    return pieces.join(" ");
 }
 
 function remove_glyphs(string){

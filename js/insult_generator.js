@@ -26,7 +26,7 @@ function write_meaning()
 		meaning_matrix.push(get_meaning(name));
 	}
 
-	pretty_print(meaning_matrix);
+	pretty_print(meaning_matrix, full_name);
 }
 
 
