@@ -11,10 +11,12 @@
 		<script type="text/javascript" src="js/random.js"></script>
 		<script type="text/javascript" src="js/insult_generator.js"></script>
 		<script type="text/javascript" src="js/io.js"></script>
+		<script type="text/javascript" src="js/requests.js"></script>
+		
 </head>
 
 	
-<body>
+<body onload="main()">
 
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
@@ -30,12 +32,12 @@
 	<section class="page-header">
 		<h1 class="project-name">Descobre o significado do teu nome</h1>
 		<br/>
-		<form name="myform" action="javascript:write_meaning()">
+		<form name="myform" action="javascript:load_new_meaning()">
 			<input style="color:black;"name="inputbox" type="text"></input>
-			<a class="btn" href="javascript:write_meaning()">Submit</a>
+			<a class="btn" href="javascript:load_new_meaning()">Submit</a>
 		</form>
 		
-		<div class="fb-share-button" data-href="http://duarte-pompeu.github.io/name_meaning/" data-layout="button"></div>
+		<div id ="fb-button" class="fb-share-button" data-href="http://duarte-pompeu.github.io/name_meaning/" data-layout="button"></div>
 			
 				
 		<h2 class="project-tagline"></h2>
