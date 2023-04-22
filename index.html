@@ -5,8 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Descobre o significado do teu nome</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="http://duarte-pompeu.github.io/name_meaning/res/name_meaning_thumbnail.png">
-
+	<meta property="og:image" content="/res/name_meaning_thumbnail.png">
 
 	<link rel="stylesheet" type="text/css" href="/css/normalize.css" media="screen">
 	<link href='/fonts/google_fants_Open_Sans:400,700' rel='stylesheet' type='text/css'>
@@ -19,45 +18,27 @@
 
 </head>
 
-	
 <body onload="main()">
-
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-   <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
 	<section class="page-header">
 		<h1 class="project-name">Descobre o significado do teu nome</h1>
-		<br/>
+		<br />
 		<form name="myform" action="javascript:load_new_meaning()">
-			<input style="color:black;"name="inputbox" type="text"></input>
+			<input style="color:black;" name="inputbox" type="text"></input>
 			<a class="btn" href="javascript:load_new_meaning()">Submit</a>
 		</form>
-		
-		<div id ="fb-button" class="fb-share-button" data-href="http://duarte-pompeu.github.io/name_meaning/" data-layout="button"></div>
-			
-				
+
 		<h2 class="project-tagline"></h2>
-	<!--
+		<!--
 		<a href="https://github.com/duarte-pompeu/name_meaning" class="btn">View on GitHub</a>
 		<a href="https://github.com/duarte-pompeu/name_meaning/zipball/master" class="btn">Download .zip</a>
 		<a href="https://github.com/duarte-pompeu/name_meaning/tarball/master" class="btn">Download .tar.gz</a>
 	-->
 	</section>
 
-		<section class="main-content">
+	<section class="main-content">
 		<div id="name_meaning" style="text-align: left;"></div>
 	</section>
 
-
-	
 </body>
-</html>
 
+</html>
